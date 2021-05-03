@@ -1,0 +1,458 @@
+<!DOCTYPE HTML>
+<!--
+	Overflow by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>刷卡兌換USDT</title>
+<meta charset="utf-8" />
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, user-scalable=no" />
+<link rel="stylesheet" href="assets/css/main.css" />
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+	crossorigin="anonymous">
+ <!-- Favicon
+        <link rel="icon" type="image/x-icon" href="/images/favicon.ico" />
+ -->
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v5.13.0/js/all.js" crossorigin="anonymous"></script>
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic" rel="stylesheet" type="text/css" />
+        <!-- Third party plugin CSS-->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css" rel="stylesheet" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="/css/styles.css" rel="stylesheet" />	
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+	integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+	crossorigin="anonymous"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+	integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+	crossorigin="anonymous"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+	integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+	crossorigin="anonymous"></script>
+	
+<noscript>
+	<link rel="stylesheet" href="assets/css/noscript.css" />
+</noscript>
+<style>
+.arrowLeft { /*整个箭头容器*/
+	width: 40px;
+	height: 10px;
+	display: inline-block;
+	position: relative; /*相对定位*/
+}
+
+.arrowLeft:before, .arrowLeft:after {
+	content: '';
+	border-color: transparent; /*伪元素边框颜色为透明*/
+	border-style: solid;
+	position: absolute; /*伪元素绝对定位*/
+}
+
+.arrowLeft:after { /*箭头尾部的矩形*/
+	width: 60%;
+	height: 2%;
+	background-color: #D3D3D3;
+	top: 5px;
+	left: 0;
+}
+
+.arrowLeft:before { /*箭头三角形*/
+	border-right-color: #D3D3D3;
+	border-width: 7px; /*箭头的大小*/
+	left: -13px;
+	top: 2px;
+}
+
+.arrowRight { /*整个箭头容器*/
+	width: 40px;
+	height: 10px;
+	display: inline-block;
+	position: relative; /*相对定位*/
+	top: -9px;
+}
+
+.arrowRight:before, .arrowRight:after {
+	content: '';
+	border-color: transparent; /*伪元素边框颜色为透明*/
+	border-style: solid;
+	position: absolute; /*伪元素绝对定位*/
+}
+
+.arrowRight:after { /*箭头尾部的矩形*/
+	width: 60%;
+	height: 2%;
+	background-color: #D3D3D3;
+	top: 5px;
+	left: 0;
+}
+
+.arrowRight:before { /*箭头三角形*/
+	border-left-color: #D3D3D3;
+	border-width: 7px;
+	left: 28px;
+	top: 2px;
+}
+</style>
+
+</head>
+
+<body class="is-preload">
+	<nav class="navbar navbar-expand-lg navbar-light fixed-top py-3"
+		id="mainNav">
+		<div class="container">
+			<a class="navbar-brand js-scroll-trigger" href="#page-top">EasyUSDT</a>
+			<button class="navbar-toggler navbar-toggler-right" type="button"
+				data-toggle="collapse" data-target="#navbarResponsive"
+				aria-controls="navbarResponsive" aria-expanded="false"
+				aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarResponsive">
+				<ul class="navbar-nav ml-auto my-2 my-lg-0">
+					
+					<li class="nav-item"><a class="nav-link js-scroll-trigger"
+						href="/getAddpage">Payment Stats</a></li>
+					<li class="nav-item"><a class="nav-link js-scroll-trigger"
+						href="#portfolio">Get USDT</a></li>
+					<li class="nav-item"><a class="nav-link js-scroll-trigger"
+						href="https://www.ktrade-official.com/">Contact Us</a></li>
+				</ul>
+			</div>
+		</div>
+	<div class="dropdown" align="right">
+		<button class="btn btn-secondary dropdown-toggle" type="button"
+			id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+			aria-expanded="false">
+			<svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-globe"
+				fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+ <path fill-rule="evenodd"	d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm7.5-6.923c-.67.204-1.335.82-1.887 1.855A7.97 7.97 0 0 0 5.145 4H7.5V1.077zM4.09 4H2.255a7.025 7.025 0 0 1 3.072-2.472 6.7 6.7 0 0 0-.597.933c-.247.464-.462.98-.64 1.539zm-.582 3.5h-2.49c.062-.89.291-1.733.656-2.5H3.82a13.652 13.652 0 0 0-.312 2.5zM4.847 5H7.5v2.5H4.51A12.5 12.5 0 0 1 4.846 5zM8.5 5v2.5h2.99a12.495 12.495 0 0 0-.337-2.5H8.5zM4.51 8.5H7.5V11H4.847a12.5 12.5 0 0 1-.338-2.5zm3.99 0V11h2.653c.187-.765.306-1.608.338-2.5H8.5zM5.145 12H7.5v2.923c-.67-.204-1.335-.82-1.887-1.855A7.97 7.97 0 0 1 5.145 12zm.182 2.472a6.696 6.696 0 0 1-.597-.933A9.268 9.268 0 0 1 4.09 12H2.255a7.024 7.024 0 0 0 3.072 2.472zM3.82 11H1.674a6.958 6.958 0 0 1-.656-2.5h2.49c.03.877.138 1.718.312 2.5zm6.853 3.472A7.024 7.024 0 0 0 13.745 12H11.91a9.27 9.27 0 0 1-.64 1.539 6.688 6.688 0 0 1-.597.933zM8.5 12h2.355a7.967 7.967 0 0 1-.468 1.068c-.552 1.035-1.218 1.65-1.887 1.855V12zm3.68-1h2.146c.365-.767.594-1.61.656-2.5h-2.49a13.65 13.65 0 0 1-.312 2.5zm2.802-3.5h-2.49A13.65 13.65 0 0 0 12.18 5h2.146c.365.767.594 1.61.656 2.5zM11.27 2.461c.247.464.462.98.64 1.539h1.835a7.024 7.024 0 0 0-3.072-2.472c.218.284.418.598.597.933zM10.855 4H8.5V1.077c.67.204 1.335.82 1.887 1.855.173.324.33.682.468 1.068z" />
+			</svg>
+		</button>
+		<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+			<a class="dropdown-item" href="/changeSessionLanauage?lang=zh_tw">繁體中文</a>
+			<a class="dropdown-item" href="/changeSessionLanauage?lang=zh_CN">简体中文</a>
+			<a class="dropdown-item" href="/changeSessionLanauage?lang=en">English</a>
+		</div>
+	</div>
+	</nav>
+	
+	<!-- 
+<div class="offsite button twitter icon icon-twitter" align="right" >
+		<form  name="LanguageForm" action="/changeSessionLanauage"
+				method="get">
+				<select name="lang" id="Language"
+					onchange="document.LanguageForm.submit()">
+					<option value=""></option>
+					<option value="zh_tw">繁體中文</option>
+					<option value="zh_CN">简体中文</option>
+					<option value="en">English</option>
+
+				</select>
+			</form>
+		</div>
+ -->
+	<!-- Header -->
+	<section id="header">
+		<header>
+
+			<h1 th:text="#{welcome}">刷卡兌換USDT</h1>
+
+			<label th:text="#{currently}">當前</label><label id="result"
+				class="USDTprice"></label><label th:text="#{exchanged}">新台幣可兌換1USDT。</label>
+			<br>
+
+			<!-- 
+						onkeyup="value=value.replace(/[^\d{1,}\.\d{1,}|\d{1,}]/g,'')"
+ -->
+			<!-- 
+			<div class="col-6 col-12-mobile"></div>
+			 -->
+			<article class="container box style1">
+				<h3 style="color: #82D900">開始購買</h3>
+				<form method="post" action="/gpointCheckOutALL">
+					<div class="row gtr-50">
+
+						<div class="col-6 col-12-mobile">
+
+							<input type="text" onkeyup="clearNoNum(this)" class="text"
+								name="USDTamount" th:placeholder="#{amount}"
+								placeholder="購買的USDT數量" id="USDTamount" />
+						</div>
+						<div class="col-6 col-12-mobile">
+							
+							<input type="text"
+								onkeypress='return event.charCode >= 48 && event.charCode <= 57'
+								class="text" name="totalAmount"
+								th:placeholder="#{RequiredTaiwanDollar}" placeholder="需要的台幣"
+								id="NTamount" />
+						</div>
+						<div class="col-6 col-12-mobile">
+							<input type="email" class="text" name="email"
+								th:placeholder="#{e-mail}" placeholder="電子郵件" id="email" />
+						</div>
+						<div class="col-12">
+							<input type="text" class="text" name="toAddress"
+								th:placeholder="#{address}" placeholder="請輸入錢包地址" id="toAddress" />
+
+						</div>
+						<div class="col-12">
+							<ul class="actions">
+								<li><input type="submit" th:value="#{redemption}"
+									value="開始兌換" /></li>
+							</ul>
+						</div>
+					</div>
+				</form>
+			</article>
+		</header>
+		<br>
+		
+
+	<script type="text/javascript">
+		function getAllmUsdtInfByEmail() {
+
+			alert("CoustomerEmail");
+
+			$.ajax({
+				type : "POST", //使用POST傳輸,檔案上傳只能用POST
+				enctype : 'multipart/form-data', //將資料加密傳輸 檔案上傳一定要有的屬性
+				url : "/selectAllmUsdtCustomerInfByCoustomerEmail", //要傳輸對應的接口
+				data : {
+
+					count : 0,
+					email : $('#coustomerEmail').val()
+				},
+
+				timeout : 1000000, //設定傳輸的timeout,時間內沒完成則中斷
+				success : function(data) {
+					//填入提示訊息到result標籤內
+					$("#tableForUsdtInf").empty();
+					$(tableForUsdtInf).append(
+							"<table class='table table-striped'>" + "<thead>"
+									+ "<tr>" + "    <th >客戶交易所留的MAIL</th>"
+									+ "    <th >客戶交易的金額</th>"
+									+ "    <th>訂單交易的狀態</th>"
+									+ "    <th>訂單交易的時間</th>"
+									+ "    <th>客戶註解</th>"
+									+ "    <th>交易的訂單編號</th>" + "</tr>"
+									+ "</thead>" + "<tbody id='tbo'>"
+									+ "</tbody>" + "<tfoot>" + "</table>"
+
+					)
+					for (var i = 0; i < data.length; i++) {
+						$("#tbo").append(
+								"<tr>" + "<td>" + data[i].usdtCustomerEmail
+										+ "</td>" + "<td>"
+										+ data[i].usdtCustomerPrice + "</td>"
+										+ "<td>"
+										+ data[i].usdtCustomerTradingStatus
+										+ "</td>" + "<td>"
+										+ data[i].usdtCustomerTradingTime
+										+ "</td>" + "<td>"
+										+ data[i].usdtCustomerDescription
+										+ "</td>" + "<td>"
+										+ data[i].usdtCustomerNumber
+										+ "</td></tr>");
+					}
+
+					//	alert("success");
+					//	alert(data);
+				},
+				error : function(e) {
+
+					alert("error");
+				}
+			})
+
+		}
+
+		//控制只能輸入小數點后2位
+		function clearNoNum(obj) {
+			obj.value = obj.value.replace(/[^\d.]/g, ""); //清除“数字”和“.”以外的字符
+			obj.value = obj.value.replace(/\.{2,}/g, "."); //只保留第一个. 清除多余的
+			obj.value = obj.value.replace(".", "$#$").replace(/\./g, "")
+					.replace("$#$", ".");
+			obj.value = obj.value.replace(/^(\-)*(\d+)\.(\d\d\d\d\d\d).*$/,
+					'$1$2.$3');//只能输入两个小数
+			if (obj.value.indexOf(".") < 0 && obj.value != "") {//以上已经过滤，此处控制的是如果没有小数点，首位不能为类似于 01、02的金额
+				obj.value = parseFloat(obj.value);
+			}
+			if (!obj.value || obj.value == '0' || obj.value == '0.0'
+					|| obj.value == '0.00' || obj.value == '0.000'
+					|| obj.value == '0.0000' || obj.value == '0.00000'
+					|| obj.value == '0.000000') {
+				//   alert('金额不能为空');k
+				return;
+			}
+			//    正常得话继续调后端接口
+		}
+
+		$('#USDTamount').keypress(function(event) {
+
+			setTimeout(function() {
+				//...............
+
+				var USDTrice = $('#USDTamount').val();
+				/*
+				 */
+				if (event.which == 13) {
+					//.  alert("按了ENTER");
+					USDTtoNT();
+
+				} else {
+
+					checkInputUSDT();
+
+				}
+
+			}, 200);
+
+		});
+
+		$("#NTamount").keypress(function(e) {
+			if (e.which == 13) {
+				NTtoUSDT();
+			}
+		});
+
+		//檢查小數點幾位
+		function checkInputUSDT() {
+
+			var USDTrice = $('#USDTamount').val();
+			var tmp = USDTrice.split(".");
+			//必須保證第一個為數字而不是.  
+			if (tmp[0].length < 1) {
+				//alert("第一個數字不能為.");
+
+				$("#USDTamount").val("");
+
+			} else if (tmp.length > 1) {
+
+				if (tmp[1].length > 5)
+					tmp[1] = tmp[1].substring(0, 5)
+				$('#USDTamount').val(tmp[0] + "." + tmp[1]);
+			}
+		}
+		function USDTtoNT() {
+
+			//	alert("USDTtoNT()")
+
+			//alert($('#USDTamount').val() * $('#result').val());
+			//alert($('#result').html());
+			//USDTamount
+			//NTamount
+			//result
+			$("#NTamount").empty();
+
+			var price = $('#result').html();
+
+			var USDTrice = $('#USDTamount').val();
+
+			var totalPrice = Math.ceil(USDTrice * price)
+
+			$("#NTamount").val(totalPrice);
+
+		}
+		function NTtoUSDT() {
+
+			$("#USDTamount").empty();
+
+			var price = $('#result').html();
+
+			var NTprice = $('#NTamount').val();
+
+			var totalPrice = parseFloat(NTprice / price).toFixed(6)
+
+			$("#USDTamount").val(totalPrice);
+
+		}
+		window.onload = function() {
+			//網頁開啟前執行的程式去抓USDT的價格
+			$.ajax({
+				type : "POST", //使用POST傳輸,檔案上傳只能用POST
+				enctype : 'multipart/form-data', //將資料加密傳輸 檔案上傳一定要有的屬性
+				url : "/api/exchangeRate", //要傳輸對應的接口
+
+				//data : data, //要傳輸的資料,我們將form 內upload打包成data
+				timeout : 1000000, //設定傳輸的timeout,時間內沒完成則中斷
+				success : function(data) {
+					$("#result").text(data);//填入提示訊息到result標籤內
+
+					//	alert("success");
+					//	alert(data);
+				},
+				error : function(e) {
+
+					alert("error");
+				}
+			})
+
+		};
+
+		// WAValidator is exposed as a global (window.WAValidator)
+
+		function isETHValidAddress() {
+
+			alert("isETHValidAddress()");
+
+			$.ajax({
+				type : "POST", //使用POST傳輸,檔案上傳只能用POST
+				enctype : 'multipart/form-data', //將資料加密傳輸 檔案上傳一定要有的屬性
+				url : "/api/verifyAddress", //要傳輸對應的接口
+
+				data : {
+
+					address : $('#toAddress').val()
+				},
+				timeout : 1000000, //設定傳輸的timeout,時間內沒完成則中斷
+				success : function(data) {
+					alert(data);
+
+					//	alert("success");
+					//	alert(data);
+				},
+				error : function(e) {
+
+					alert("error");
+				}
+			})
+
+		}
+	</script>
+
+
+	<!-- Scripts
+		    <script src="wallet-address-validator.min.js"></script>
+		 -->
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/jquery.scrolly.min.js"></script>
+	<script src="assets/js/jquery.poptrox.min.js"></script>
+	<script src="assets/js/browser.min.js"></script>
+	<script src="assets/js/breakpoints.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<script src="assets/js/main.js"></script>
+	 <footer class="bg-light py-5">
+            <div class="container"><div class="small text-center text-muted">Copyright © 2020 - Start Bootstrap</div></div>
+      </footer>
+        <!-- Bootstrap core JS-->
+        <!-- 
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>
+         -->
+        <!-- Third party plugin JS-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+
+</body>
+</html>

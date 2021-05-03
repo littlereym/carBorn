@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml" xmlns:shiro="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>测试Thymeleaf的使用</title>
+</head>
+<body>
+<h1>Test</h1>
+<p>你好！[[${name}]]</p>
+<h3>你好！</h3><h3 th:text="${name}"></h3>
+測試版面<a href="startbootstrap">看看版面</a>
+<div >
+    看看：<a href="look">看看版面</a>
+</div>
+<div shiro:hasPermission="user:admin">
+    进入用户添加功能：<a href="add">用户添加</a><br>
+</div>
+<div shiro:hasPermission="user:editor">
+    进入用户更新功能：<a href="update">用户更新</a>
+</div>
+<div shiro:hasPermission="user:admin">
+    看看：<a href="index">母災樣</a>
+</div>
+<a href="toLogin">登录</a>
+</body>
+</html>

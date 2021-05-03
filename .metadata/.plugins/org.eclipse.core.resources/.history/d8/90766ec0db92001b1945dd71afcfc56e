@@ -1,0 +1,113 @@
+server.port=8080
+
+mybatis-plus.configuration.log-impl=org.apache.ibatis.logging.stdout.StdOutImpl
+
+spring.datasource.url=jdbc:mysql://localhost:3306/co2_transaction?useUnicode=true&characterEncoding=utf-8&serverTimezone=GMT%2b8
+#spring.datasource.url=jdbc:mysql://remote.statecraft-baas.com:21301/moive_blockchain?useUnicode=true&characterEncoding=utf-8&serverTimezone=UTC
+#jdbc:mysql://ktrade12.ark-program.com:33064/trading_chart?useUnicode=true&amp;characterEncoding=utf-8&amp;serverTimezone=UTC"
+spring.datasource.username=root
+#spring.datasource.password=root
+#loco密碼
+spring.datasource.password=wB4KVAUukd3W8p
+#spring.datasource.password=YP7Hb8VQuxJvKS
+
+spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
+ 
+web3j.client-address = https://testnet-rpc.thundercore.com
+
+
+#配置文件传输
+spring.servlet.multipart.enabled = true  
+spring.servlet.multipart.file-size-threshold = 0
+#单个文件的最大上限
+spring.servlet.multipart.max-file-size = 100MB
+#单个请求的文件总大小上限
+spring.servlet.multipart.max-request-size=1000MB
+filePath=d:/test/
+
+spring.jackson.date-format=yyyy-MM-dd HH:mm:ss
+spring.jackson.time-zone=GMT+8
+
+spring.jpa.database:mysql
+spring.jpa.show-sql=true
+
+
+
+#config.uploadFiles.path = /usr/local/ws/imgs/
+
+
+
+config.uploadFiles.path = C:\STS\workSpace\co2Transaction\co2Transaction\src\main\resources\static\back\img\
+#config.uploadFiles.path = D:/txt/
+#config.imageFiles.url = http://pzuaj.ark-program.com:8080/api/imgs/
+config.imageFiles.url = http://192.168.0.14/:8080/api/upload/multi
+# REDIS (RedisProperties)
+# Redis資料庫索引（預設為0）
+spring.redis.database=0  
+# Redis伺服器地址
+spring.redis.host=192.168.0.14
+# Redis伺服器連線埠
+spring.redis.port=6379  
+# Redis伺服器連線密碼（預設為空）
+spring.redis.password=  
+# 連線池最大連線數（使用負值表示沒有限制）
+spring.redis.pool.max-active=8  
+# 連線池最大阻塞等待時間（使用負值表示沒有限制）
+spring.redis.pool.max-wait=-1 
+# 連線池中的最大空閒連線
+spring.redis.pool.max-idle=8  
+# 連線池中的最小空閒連線
+spring.redis.pool.min-idle=0  
+# 連線超時時間（毫秒）
+spring.redis.timeout=0
+
+####################################################### 
+###THYMELEAF (ThymeleafAutoConfiguration) 
+######################################################## 
+spring.freemarker.allow-request-override=false 
+spring.freemarker.cache=true 
+spring.freemarker.check-template-location=true 
+spring.freemarker.charset=UTF-8 
+spring.freemarker.content-type=text/html 
+spring.freemarker.expose-request-attributes=false 
+spring.freemarker.expose-session-attributes=false 
+spring.freemarker.expose-spring-macro-helpers=false 
+#spring.freemarker.prefix= 
+#spring.freemarker.request-context-attribute= 
+#spring.freemarker.settings.*= 
+#spring.freemarker.suffix=.ftl 
+#spring.freemarker.template-loader-path=classpath:/templates/#comma-separatedlist 
+#spring.freemarker.view-names= #whitelistofviewnamesthatcanberesolved 
+
+########################################################
+
+### i18n setting.
+
+########################################################
+
+#指定message的basename，多個以逗號分隔，如果不加包名的話，預設從classpath路徑開始，預設: messages
+
+
+
+banner.charset=UTF-8
+server.tomcat.uri-encoding=UTF-8
+
+
+spring.http.encoding.charset=UTF-8
+spring.http.encoding.enabled=true
+spring.http.encoding.force=true
+
+
+
+spring.messages.basename=i18n/messages
+spring.messages.fallback-to-system-locale=false
+#設定載入的資原始檔快取失效時間，-1的話為永不過期，預設為-1
+
+spring.messages.cache-seconds= 3600
+
+#設定Message bundles的編碼，預設: UTF-8
+
+spring.messages.encoding=UTF-8
+#spring.messages.encoding=UTF-8        
+spring.devtools.restart.enabled=true   
+spring.devtools.restart.additional-paths=src/main/java  
